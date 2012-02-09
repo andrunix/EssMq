@@ -1,0 +1,24 @@
+<project name="DelTrail" default="compile" basedir=".">
+    <description>
+        Builds the QPost application which posts messsage
+        to a WebSphere MQ message queue.
+    </description>
+    <!-- set global properties for this build -->
+    <property name="src" location="src"/>
+    <property name="bin" location="../bin"/>
+
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${bin}"/>
+    </target>
+
+    <target name="compile" depends="init"
+          description="compile the source " >
+        <!-- Compile the java code from ${src} into ${bin} -->
+        <javac srcdir="${src}" destdir="${bin}"/>
+    </target>
+
+</project>
+
